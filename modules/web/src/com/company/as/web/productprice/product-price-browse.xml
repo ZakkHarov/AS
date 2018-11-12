@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.as.web.productprice.ProductPriceBrowse"
+        focusComponent="productPricesTable"
+        lookupComponent="productPricesTable"
+        messagesPack="com.company.as.web.productprice">
+    <dsContext>
+        <groupDatasource id="productPricesDs"
+                         class="com.company.as.entity.ProductPrice"
+                         view="productPrice-view">
+            <query>
+                <![CDATA[select e from as$ProductPrice e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="productPricesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="productPricesTable"
+                datasource="productPricesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="productPricesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="import"
+                        invoke="onImport"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="product"/>
+                <column id="price"/>
+            </columns>
+            <rows datasource="productPricesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="productPricesTable.create"/>
+                <button id="editBtn"
+                        action="productPricesTable.edit"/>
+                <button id="removeBtn"
+                        action="productPricesTable.remove"/>
+                <button id="importButton"
+                        action="productPricesTable.import"
+                        caption="msg://import"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

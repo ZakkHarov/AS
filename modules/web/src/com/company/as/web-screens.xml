@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
-
+    <screen id="as$Product.browse"
+            template="com/company/as/web/product/product-browse.xml"/>
+    <screen id="as$Product.edit"
+            template="com/company/as/web/product/product-edit.xml"/>
+    <screen id="as$ProductPrice.browse"
+            template="com/company/as/web/productprice/product-price-browse.xml"/>
+    <screen id="as$ProductPrice.edit"
+            template="com/company/as/web/productprice/product-price-edit.xml"/>
 </screen-config>

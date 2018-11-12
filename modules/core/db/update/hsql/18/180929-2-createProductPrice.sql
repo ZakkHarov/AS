@@ -1,0 +1,2 @@
+alter table AS_PRODUCT_PRICE add constraint FK_AS_PRODUCT_PRICE_ON_PRODUCT foreign key (PRODUCT_ID) references AS_PRODUCT(ID);
+create index IDX_AS_PRODUCT_PRICE_ON_PRODUCT on AS_PRODUCT_PRICE (PRODUCT_ID);
